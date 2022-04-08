@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
-import { ref, onMounted, nextTick,watch } from 'vue'
+import { ref, onMounted, nextTick,watch,onBeforeUnmount } from 'vue'
 import { key } from '@/store'
 import { useStore } from 'vuex'
 const store = useStore(key)
@@ -81,6 +81,12 @@ watch(() => store.getters.sideBarIsCollapse, (current, prev) => {
       })
     }, 200)
 
+  }
+})
+onBeforeUnmount(()=> {
+  if(mychart) {
+    mychart.dispose()
+    mychart = null
   }
 })
 </script>

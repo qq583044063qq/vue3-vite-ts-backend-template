@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
-import { ref, onMounted, nextTick, watch } from 'vue'
+import { ref, onMounted, nextTick, watch, onBeforeUnmount } from 'vue'
 import { key } from '@/store'
 import { useStore } from 'vuex'
 const store = useStore(key)
@@ -124,6 +124,12 @@ const setOptions = (chartData: ILineChartData) => {
     })
   }
 }
+onBeforeUnmount(()=> {
+  if(mychart) {
+    mychart.dispose()
+    mychart = null
+  }
+})
 </script>
 <script lang ="ts">
 export interface ILineChartData {
