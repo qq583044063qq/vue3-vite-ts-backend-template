@@ -68,7 +68,7 @@ const confirmLogout = () => {
     </el-container>
   </el-container>-->
 </template>
-<style scoped>
+<style scoped lang="scss">
 .base-container {
   position: relative;
   height: 100%;
@@ -100,11 +100,38 @@ const confirmLogout = () => {
   width: 64px;
 }
 .app-main {
-  min-height: calc(100vh - 104px);
+  height: calc(100vh - 104px);
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+  .app-main::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 5px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  }
+  .app-main::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius   : 5px;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+  );
+  }
+  .app-main::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : none;
+  background   : #ffffff;
+  border-radius: 10px;
+  }
 .app-footer {
   background-color:#dee0e0;
   height: 53px;
