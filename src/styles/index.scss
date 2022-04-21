@@ -20,3 +20,30 @@ code {
   background-color: var(--el-color-primary-light-9);
   color: var(--el-color-primary);
 }
+// 默认自定义滚动条
+.my-custom-scroll::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+.my-custom-scroll::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  background-color: rgb(195, 214, 221);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+.my-custom-scroll::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: none;
+  background: #ffffff;
+  border-radius: 10px;
+}
