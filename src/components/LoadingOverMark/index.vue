@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import loadingImage from '@/assets/images_load.gif'
+interface prop {
+  loadingText: string
+}
+const props = withDefaults(defineProps<prop>(),{
+  loadingText: '正在加载中...'
+})
 </script>
 <template>
   <div class="overMark-container">
     <div class="loading">
       <span class="icon"><img :src="loadingImage"/></span>
-      <span class="text">正在加载中...</span>
+      <span class="text">{{props.loadingText}}</span>
     </div>
   </div>
 </template>
