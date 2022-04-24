@@ -17,6 +17,7 @@
     "nprogress": "^0.2.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
+    "vue3-count-to": "^1.1.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

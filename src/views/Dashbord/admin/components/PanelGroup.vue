@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Setting, User, Expand, Fold, InfoFilled, Message, Money, ShoppingCart } from '@element-plus/icons-vue'
+import { CountTo } from 'vue3-count-to'
 // 设定事件
 const emit = defineEmits<{
   (e: 'handleSetLineChartDataEvent', type:string):void
@@ -33,7 +34,7 @@ const handleSetLineChartData = (type:string) => {
           <div class="card-panel-text">
             New Visits
           </div>
-          <span class="card-panel-num">102400</span >
+          <span class="card-panel-num"><CountTo :startVal='0' :endVal='102400' :duration='3000'></CountTo></span >
         </div>
       </div>
     </el-col>
@@ -56,7 +57,7 @@ const handleSetLineChartData = (type:string) => {
           <div class="card-panel-text">
             Messages
           </div>
-          <span class="card-panel-num">81212</span >
+          <span class="card-panel-num"><CountTo :startVal='0' :endVal='81212' :duration='3000'></CountTo></span >
         </div>
       </div>
     </el-col>
@@ -80,7 +81,7 @@ const handleSetLineChartData = (type:string) => {
           <div class="card-panel-text">
             Purchases
           </div>
-          <span class="card-panel-num">9280</span >
+          <span class="card-panel-num"><CountTo :startVal='0' :endVal='9280' :duration='3000'></CountTo></span >
         </div>
       </div>
     </el-col>
@@ -104,7 +105,7 @@ const handleSetLineChartData = (type:string) => {
           <div class="card-panel-text">
             Shoppings
           </div>
-          <span class="card-panel-num">13600</span >
+          <span class="card-panel-num"><CountTo :startVal='0' :endVal='13600' :duration='3000'></CountTo></span >
         </div>
       </div>
     </el-col>
